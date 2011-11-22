@@ -1,4 +1,4 @@
-Mediatizr 0.1.0
+Mediatizr 0.1.1
 ===============
 
 This library adds media queries support to browsers that don't support it (like Internet Explorer 5.5-8), using [Sheethub](https://github.com/pyrsmk/Sheethub) and [W](https://github.com/pyrsmk/W). It's easy of use: just add it to your website and it will run by itself.
@@ -10,6 +10,8 @@ Features
 - min-width/max-width
 - min-device-width/max-device-width
 - resizing, zooming and text size changing will re-evaluate media queries for live responsive adjustment
+- @keyframes friendly
+- expose current media queries support with `window.supportMediaQueries`
 
 Dependencies
 ------------

@@ -1,7 +1,7 @@
 /*
     mediatizr, adds media queries support to incapable browsers
     
-    Version     : 0.1.0
+    Version     : 0.1.1
     Author      : Aurélien Delogu (dev@dreamysource.fr)
     Homepage    : https://github.com/pyrsmk/mediatizr
     License     : MIT
@@ -14,49 +14,54 @@
 
 (function(){
     
-    var doc=document,
+    var win=window,
+        doc=document,
         html=doc.documentElement,
-        a,
-        b='test-mqs',
-        Sheethub=window.Sheethub,
-        mqs=function(){
+        Sheethub=win.Sheethub,
+        id='mediatizr',
+        get='get',
+        node='node',
+        element,
+        mediatizr=function(){
         
-            var sheets=Sheethub.get(),
+            var sheets=Sheethub[get](),
+                sheet,
                 stylesheets=[],
-                id,
                 name,
-                node,
+                nod,
                 contents,
                 start,
                 end,
                 mq,
                 index,
                 indexOf='indexOf',
+                i,
                 /*
-                    The core function: evaluate stylesheets for showing
+                    Evaluate media queries and show stylesheets
                 */
                 evalMedias=function(){
-                    var i,j,conditions,condition,first,second;
+                    var i,j,condition,conditions,first,second;
                     // Browse registered stylesheets
                     for(i in stylesheets){
                         // Evaluate expression
                         conditions=stylesheets[i].split('and');
-                        j=conditions.length;
-                        while(j){
-                            condition=conditions[--j].match(/\(\s*(.+?)\s*:\s*(.+?)(px|em)\s*\)/);
-                            if(condition){
-                                // Format values
-                                first=W();
-                                second=condition[2];
-                                if(condition[3]=='em'){
-                                    first=W(first);
-                                }
-                                // Enable/disable stylesheet
-                                Sheethub.get(i).node().disabled=
-                                    !condition[1][indexOf]('min')?
-                                    first<second:
-                                    first>second;
+                        j=-1;
+                        while(conditions[++j]){
+                            // Extract data
+                            condition=conditions[j].match(/\(\s*(.+?)\s*:\s*(.+?)(px|em)\s*\)/);
+                            // Format values
+                            if(condition[3]=='em'){
+                                first=W(first);
                             }
+                            else{
+                                first=W();
+                            }
+                            second=condition[2];
+                            // Enable/disable stylesheet
+                            Sheethub[get](i)[node]().disabled=
+                                !condition[1][indexOf]('min')?
+                                first<second:
+                                first>second;
                         }
                     }
                 },
@@ -93,34 +98,32 @@
                     }
                     return -1;
                 };
-                
-            b=0;
-            for(id in sheets){
-                if(!/mq\d+$/.test(id)){
-                    contents=sheets[id].get();
+            
+            // Register media queries
+            i=0;
+            for(sheet in sheets){
+                if(!sheet.match('^'+id)){
+                    contents=sheets[sheet][get]();
                     index=0;
-                    do{
-                        // Find a new media query
-                        start=contents[indexOf]('@media',index);
-                        if(start==-1){
-                            break;
-                        }
+                    // A new media query was found
+                    while((start=contents[indexOf]('@media',index))!=-1){
+                        // Search corresponding close bracket
                         end=indexOfMatchedBracket(contents.substr(start));
-                        // ################ test with breaklines #########################
-                        mq=contents.substr(start,end).match(/@media\s+(.+)and(.+)\{([\S\s]+)/i);
-                        if(mq){
+                        // Extract data
+                        if(mq=contents.substr(start+6,end).match(/([\S\s]+?)and([\S\s]+?)\{([\S\s]+)/i)){
                             // Create the new stylesheet
-                            Sheethub.add(name=id+'.mq'+(++b),mq[3]);
-                            node=Sheethub.get(name).node();
+                            Sheethub.add(name=id+(++i)+sheet,mq[3]);
+                            nod=Sheethub[get](name)[node]();
                             // Define media type
-                            node.media=mq[1];
-                            // Register this styidlesheet
+                            nod.media=mq[1];
+                            // Register this stylesheet
                             stylesheets[name]=(mq[2]+'').toLowerCase();
                             // Disable it for the time
-                            node.disabled=true;
+                            nod.disabled=true;
                         }
+                        // Update index
+                        index=start+end;
                     }
-                    while(index=start+end);
                 }
             }
             
@@ -131,23 +134,28 @@
         };
     
     // Test if media queries are supported or not
-    a=doc.createElement('div');
-    a.id=b;
-    a.style.position='absolute';
-    a.style.top='-99em';
-    html.appendChild(a);
-    Sheethub.add(b,'#'+b+'{width:9px}');
-    Sheethub.get(b).node().media='only all';
-    if(a.offsetWidth!=9){
+    if(!(win.supportMediaQueries=function(){
+        if(win.matchMedia){
+            return true;
+        }
+        element=doc.createElement('p');
+        element.id=id;
+        element.style.position='absolute';
+        element.style.top='-99em';
+        html.appendChild(element);
+        Sheethub.add(id,'#'+id+'{width:9px}');
+        Sheethub[get](id)[node]().media='only all';
+        return element.offsetWidth!=9 &&
+               !Sheethub.remove(id) &&
+               !html.removeChild(element);
+    }())){
         // Launch script
         if(Sheethub.ready()){
-            mqs();
+            mediatizr();
         }
         else{
-            Sheethub.listen(mqs);
+            Sheethub.listen(mediatizr);
         }
     }
-    Sheethub.remove(b);
-    html.removeChild(a);
     
 })();
