@@ -18,6 +18,11 @@ Dependencies
 
 You can choose among 3 script versions to minimize bandwith use and maximize simplicity. If you've already added one of these libraries (or both) into your project, then take the simple minified mediatizr version, else take one with the script(s) that you haven't included.
 
+Caveats
+-------
+
+There's some issues between IE<8 and em values in W. If you've planned to use em units on your media queries and you want to support IE6/7, then you _must_ load mediatizr when the DOM is ready.
+
 License
 -------
 
