@@ -1,7 +1,7 @@
 /*
     mediatizr, adds media queries support to incapable browsers
     
-    Version     : 0.1.1
+    Version     : 0.1.2
     Author      : Aurélien Delogu (dev@dreamysource.fr)
     Homepage    : https://github.com/pyrsmk/mediatizr
     License     : MIT
