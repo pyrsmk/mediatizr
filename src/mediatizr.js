@@ -1,7 +1,7 @@
 /*
     mediatizr, adds media queries support to incapable browsers
     
-    Version     : 0.1.2
+    Version     : 0.1.3
     Author      : Aurélien Delogu (dev@dreamysource.fr)
     Homepage    : https://github.com/pyrsmk/mediatizr
     License     : MIT
@@ -145,9 +145,9 @@
         html.appendChild(element);
         Sheethub.add(id,'#'+id+'{width:9px}');
         Sheethub[get](id)[node]().media='only all';
-        return element.offsetWidth!=9 &&
+        return element.offsetWidth==9 &&
                !Sheethub.remove(id) &&
-               !html.removeChild(element);
+               !!html.removeChild(element);
     }())){
         // Launch script
         if(Sheethub.ready()){

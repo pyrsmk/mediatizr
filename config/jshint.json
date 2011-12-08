@@ -1,6 +1,6 @@
 {
     "browser"   : true,
-    "predef"    : ["Sheethub","W"],
+    "predef"    : ["Sheethub","W","log"],
     "boss"      : true,
     "curly"     : true,
     "eqnull"    : true,

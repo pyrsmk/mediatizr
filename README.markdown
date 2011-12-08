@@ -1,4 +1,4 @@
-Mediatizr 0.1.1
+Mediatizr 0.1.3
 ===============
 
 This library adds media queries support to browsers that don't support it (like Internet Explorer 5.5-8), using [Sheethub](https://github.com/pyrsmk/Sheethub) and [W](https://github.com/pyrsmk/W). It's easy of use: just add it to your website and it will run by itself.
