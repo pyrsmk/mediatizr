@@ -1,13 +1,12 @@
 /*
     mediatizr, adds media queries support to incapable browsers
     
-    Version     : 0.1.3
+    Version     : 0.1.4
     Author      : Aurélien Delogu (dev@dreamysource.fr)
     Homepage    : https://github.com/pyrsmk/mediatizr
     License     : MIT
     
     Dependencies
-        
         Sheethub
         W
 */
@@ -40,7 +39,7 @@
                     Evaluate media queries and show stylesheets
                 */
                 evalMedias=function(){
-                    var i,j,condition,conditions,first,second;
+                    var i,j,condition,conditions,current,required;
                     // Browse registered stylesheets
                     for(i in stylesheets){
                         // Evaluate expression
@@ -49,19 +48,13 @@
                         while(conditions[++j]){
                             // Extract data
                             condition=conditions[j].match(/\(\s*(.+?)\s*:\s*(.+?)(px|em)\s*\)/);
-                            // Format values
-                            if(condition[3]=='em'){
-                                first=W(first);
-                            }
-                            else{
-                                first=W();
-                            }
-                            second=condition[2];
+                            current=W(condition[3]=='em');
+                            required=condition[2];
                             // Enable/disable stylesheet
                             Sheethub[get](i)[node]().disabled=
                                 !condition[1][indexOf]('min')?
-                                first<second:
-                                first>second;
+                                current<required:
+                                current>required;
                         }
                     }
                 },
@@ -110,7 +103,7 @@
                         // Search corresponding close bracket
                         end=indexOfMatchedBracket(contents.substr(start));
                         // Extract data
-                        if(mq=contents.substr(start+6,end).match(/([\S\s]+?)and([\S\s]+?)\{([\S\s]+)/i)){
+                        if(mq=contents.substr(start+6,end-4).match(/([\S\s]+?)and([\S\s]+?)\{([\S\s]+)/i)){
                             // Create the new stylesheet
                             Sheethub.add(name=id+(++i)+sheet,mq[3]);
                             nod=Sheethub[get](name)[node]();
