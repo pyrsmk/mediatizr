@@ -16,7 +16,7 @@ Features
 Dependencies
 ------------
 
-You can choose among 3 script versions to minimize bandwith use and maximize simplicity. If you've already added one of these libraries (or both) into your project, then take the simple minified mediatizr version, else take one with the script(s) that you haven't included.
+You can choose among 4 script versions to minimize bandwith use and maximize simplicity. If you've already added one of these libraries (or both) into your project, then take the simple minified mediatizr version, else take one with the script(s) that you haven't included.
 
 Caveats
 -------
