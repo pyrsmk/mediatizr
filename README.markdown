@@ -13,6 +13,11 @@ Features
 - @keyframes friendly
 - expose current media queries support with `window.supportMediaQueries`
 
+Use
+---
+
+Simply link the script to you page as usual. Mediatizr will run itself.
+
 Dependencies
 ------------
 
@@ -22,6 +27,10 @@ Caveats
 -------
 
 There's some issues between IE<8 and em values in W. If you've planned to use em units on your media queries and you want to support IE6/7, then you _must_ load mediatizr when the DOM is ready.
+
+Unlike [Respond](https://github.com/scottjehl/Respond), you don't need to put `/*/mediaquery*/` comments to help mediatizr to parse media queries.
+
+Using mediatizr with `STYLE` stylesheets (sheets that have been included to the HTML page itself) can't work. Because, when the browser parses the `STYLE` stylesheet and encounters rules that it don't understand then it will simply drop these rules: your media queries are lost. For-ever.
 
 License
 -------
