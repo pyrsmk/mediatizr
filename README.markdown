@@ -16,7 +16,7 @@ Features
 Use
 ---
 
-Simply link the script to you page as usual. Mediatizr will run itself.
+Simply link the script to your page as usual. Mediatizr will run by itself.
 
 Dependencies
 ------------
