@@ -1,7 +1,7 @@
 Mediatizr 0.1.4
 ===============
 
-This library adds media queries support to browsers that don't support it (like Internet Explorer 5.5-8), using [Sheethub](https://github.com/pyrsmk/Sheethub) and [W](https://github.com/pyrsmk/W). It's easy of use: just add it to your website and it will run by itself.
+This library adds media queries support to browsers that don't support it (like Internet Explorer 5.5-8).
 
 Features
 --------
@@ -21,7 +21,7 @@ Simply link the script to your page as usual. Mediatizr will run by itself.
 Dependencies
 ------------
 
-You can choose among 4 script versions to minimize bandwith use and maximize simplicity. If you've already added one of these libraries (or both) into your project, then take the simple minified mediatizr version, else take one with the script(s) that you haven't included.
+Mediatizr uses [Sheethub](https://github.com/pyrsmk/Sheethub) and [W](https://github.com/pyrsmk/W) libraries. Then, you can choose among 4 script versions to minimize bandwith use and maximize simplicity. If you've already added one of these libraries (or both) into your project, then take the simple minified mediatizr version, else take the one with the script(s) that you haven't included.
 
 Caveats
 -------
@@ -30,7 +30,7 @@ There's some issues between IE<8 and em values in W. If you've planned to use em
 
 Unlike [Respond](https://github.com/scottjehl/Respond), you don't need to put `/*/mediaquery*/` comments to help mediatizr to parse media queries.
 
-Using mediatizr with `STYLE` stylesheets (sheets that have been included to the HTML page itself) can't work. Because, when the browser parses the `STYLE` stylesheet and encounters rules that it don't understand then it will simply drop these rules: your media queries are lost. For-ever.
+Using mediatizr with `STYLE` stylesheets (sheets that have been included to the HTML page itself) can't work. Because, when the browser parses the `STYLE` stylesheet and encounters rules that it don't understand then it will simply drop these rules: your media queries are lost. For... ever.
 
 License
 -------
