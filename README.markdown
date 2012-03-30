@@ -30,7 +30,7 @@ There's some issues between IE<8 and em values in W. If you've planned to use em
 
 Unlike [Respond](https://github.com/scottjehl/Respond), you don't need to put `/*/mediaquery*/` comments to help mediatizr to parse media queries.
 
-Using mediatizr with `STYLE` stylesheets (sheets that have been included to the HTML page itself) can't work. Because, when the browser parses the `STYLE` stylesheet and encounters rules that it don't understand then it will simply drop these rules: your media queries are lost. For... ever.
+Using mediatizr with `STYLE` stylesheets (sheets that have been included to the HTML page itself) can't work. Because, when the browser parses the `STYLE` stylesheet and encounters rules that it doesn't understand then it will simply drops these rules: your media queries are lost. For...ever.
 
 License
 -------
