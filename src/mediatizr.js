@@ -25,7 +25,7 @@
         
             var sheets=Sheethub[get](),
                 sheet,
-                stylesheets=[],
+                stylesheets={},
                 name,
                 nod,
                 contents,
