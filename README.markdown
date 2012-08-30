@@ -1,4 +1,4 @@
-Mediatizr 0.1.4
+Mediatizr 0.2.0
 ===============
 
 This library adds media queries support to browsers that don't support it (like Internet Explorer 5.5-8).
@@ -28,9 +28,7 @@ Caveats
 
 There's some issues between IE<8 and em values in W. If you've planned to use em units on your media queries and you want to support IE6/7, then you _must_ load mediatizr when the DOM is ready.
 
-Unlike [Respond](https://github.com/scottjehl/Respond), you don't need to put `/*/mediaquery*/` comments to help mediatizr to parse media queries.
-
-Using mediatizr with `STYLE` stylesheets (sheets that have been included to the HTML page itself) can't work. Because, when the browser parses the `STYLE` stylesheet and encounters rules that it doesn't understand then it will simply drops these rules: your media queries are lost. For...ever.
+Using mediatizr with `STYLE` stylesheets (sheets that have been included to the HTML page itself) doesn't work, because when the browser parses the `STYLE` stylesheet and encounters rules that it doesn't understand then it will simply drops these rules: your media queries are lost. For...ever.
 
 License
 -------

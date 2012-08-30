@@ -1,18 +1,18 @@
 /*
     mediatizr, adds media queries support to incapable browsers
-    
-    Version     : 0.1.4
+
+    Version     : 0.2.0
     Author      : Aurélien Delogu (dev@dreamysource.fr)
     Homepage    : https://github.com/pyrsmk/mediatizr
     License     : MIT
-    
+
     Dependencies
         Sheethub
         W
 */
 
 (function(){
-    
+
     var win=window,
         doc=document,
         html=doc.documentElement,
@@ -22,7 +22,7 @@
         node='node',
         element,
         mediatizr=function(){
-        
+
             var sheets=Sheethub[get](),
                 sheet,
                 stylesheets={},
@@ -60,7 +60,7 @@
                 },
                 /*
                     Search a corresponding closed bracket
-                    
+
                     Return
                         integer
                 */
@@ -91,7 +91,7 @@
                     }
                     return -1;
                 };
-            
+
             // Register media queries
             i=0;
             for(sheet in sheets){
@@ -119,13 +119,13 @@
                     }
                 }
             }
-            
+
             // Catch responsive events
             W(evalMedias);
             evalMedias();
-            
+
         };
-    
+
     // Test if media queries are supported or not
     if(!(win.supportMediaQueries=function(){
         if(win.matchMedia){
@@ -150,5 +150,5 @@
             Sheethub.listen(mediatizr);
         }
     }
-    
+
 })();
