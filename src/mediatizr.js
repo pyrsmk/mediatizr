@@ -1,7 +1,7 @@
 /*
     mediatizr, a media queries polyfill
 
-    Version     : 0.3.0
+    Version     : 0.3.1
     Author      : Aurélien Delogu (dev@dreamysource.fr)
     Homepage    : https://github.com/pyrsmk/mediatizr
     License     : MIT

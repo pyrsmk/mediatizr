@@ -1,4 +1,4 @@
-Mediatizr 0.2.0
+Mediatizr 0.3.1
 ===============
 
 This library adds media queries support to browsers that don't support it (like Internet Explorer 5.5-8).
