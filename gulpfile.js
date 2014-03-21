@@ -1,34 +1,26 @@
 var gulp = require('gulp');
 //var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var fs = require('fs');
 
 // Remove old files
-gulp.task('clean',function(){
+gulp.task('clean-old',function(){
 	gulp.src('*.min.js',{read:false})
 		.pipe(clean());
 });
 
-// Lint
-gulp.task('lint',function(){
+// Compile
+gulp.task('compile',function(){
 	/*gulp.src('src/*.js')
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'));*/
-});
-
-// Minify
-gulp.task('minify',function(){
-	gulp.src('src/*.js')
-		.pipe(uglify());
-});
-
-// Concatenate
-gulp.task('concatenate',function(){
-	gulp.src(['lib/Sheethub*.js','lib/W*.js'])
+	gulp.src(['lib/Sheethub*.js','lib/W*.js','src/*.js'])
+		.pipe(uglify())
 		.pipe(concat('mediatizr-'+JSON.parse(fs.readFileSync('bower.json')).version+'.min.js'))
 		.pipe(gulp.dest('.'));
 });
 
-gulp.task('default',['clean','lint','minify','concatenate']);
+gulp.task('default',['clean-old','compile']);
