@@ -1,7 +1,7 @@
 mediatizr 0.3.2
 ===============
 
-Mediatizr adds media queries handling to browsers that don't support it (like Internet Explorer 5.5-8). It's based on [Sheethub](https://github.com/pyrsmk/Sheethub) and [W](https://github.com/pyrsmk/W) to have great compatibility
+Mediatizr adds media queries to browsers that don't support it (like Internet Explorer 5.5-8). It's based on [Sheethub](https://github.com/pyrsmk/Sheethub) and [W](https://github.com/pyrsmk/W) to have a better compatibility with retrieving stylesheets and responsive events.
 
 Features
 --------
@@ -16,14 +16,14 @@ Features
 Use
 ---
 
-Link the script at the top of your page
+Link the script at the top of your page, under your stylesheet declarations.
 
 Caveats
 -------
 
 There's some issues between IE<8 and em values in W. If you've planned to use `em` units in your media queries and you want to support IE6/7, then you _must_ load mediatizr when the DOM is ready.
 
-Using mediatizr with `STYLE` stylesheets (sheets that have been included to the HTML page itself) doesn't work, because when the browser parses the `STYLE` stylesheet and encounters rules that it doesn't understand then it will simply drops these rules: your media queries are lost. For...ever.
+Using mediatizr with `STYLE` stylesheets (sheets that have been included to the HTML page itself) doesn't work, because when the browser parses the `STYLE` node and encounters rules that it doesn't understand then it will simply drop them, and your media queries are just lost. For...ever.
 
 License
 -------
