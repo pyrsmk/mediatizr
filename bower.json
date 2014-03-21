@@ -1,0 +1,20 @@
+{
+  "name": "mediatizr",
+  "version": "0.3.2",
+  "description": "A media queries polyfill",
+  "main": "src/mediatizr.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pyrsmk/mediatizr.git"
+  },
+  "keywords": [
+    "polyfill",
+    "media queries"
+  ],
+  "authors": ["Aurélien Delogu"],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pyrsmk/mediatizr/issues"
+  },
+  "homepage": "http://dreamysource.fr/product/mediatizr"
+}

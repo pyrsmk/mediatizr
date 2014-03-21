@@ -1,8 +1,0 @@
-{
-    "browser"   : true,
-    "predef"    : ["Sheethub","W","log"],
-    "boss"      : true,
-    "curly"     : true,
-    "eqnull"    : true,
-    "undef"     : true
-}
