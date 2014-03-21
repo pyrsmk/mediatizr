@@ -1,9 +1,9 @@
-var fs = require('fs');
 var gulp = require('gulp');
 //var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
+var fs = require('fs');
 
 // Remove old files
 gulp.task('clean',function(){
@@ -26,7 +26,7 @@ gulp.task('minify',function(){
 
 // Concatenate
 gulp.task('concatenate',function(){
-	gulp.src(['lib/Sheethub*.js','lib/W*.js','src/mediatizr.js'])
+	gulp.src(['lib/Sheethub*.js','lib/W*.js'])
 		.pipe(concat('mediatizr-'+JSON.parse(fs.readFileSync('bower.json')).version+'.min.js'))
 		.pipe(gulp.dest('.'));
 });
