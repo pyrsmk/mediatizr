@@ -10,13 +10,14 @@ module.exports = function(grunt) {
 		},
 		// Lint
 		jshint: {
+			library: ['src/*.js'],
 			options: {
 				'browser'	: true,
-				'predef'	: ['define', 'module', 'ActiveXObject', 'Document', 'console', 'log'],
+				'predef'	: ['W','define', 'module', 'ActiveXObject', 'Document', 'console', 'log'],
 				'boss'		: true,
 				'curly'		: true,
 				'eqnull'	: true,
-				'newcap'	: true,
+				'newcap'	: false,
 				'undef'		: true,
 				'loopfunc'	: true,
 				'evil'		: true,
