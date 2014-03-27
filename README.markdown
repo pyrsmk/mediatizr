@@ -28,4 +28,4 @@ Using mediatizr with `STYLE` stylesheets (sheets that have been included to the 
 License
 -------
 
-Mediatizr is brought to you with the MIT license.
+Mediatizr is brought to you with the [MIT license](http://dreamysource.mit-license.org).
