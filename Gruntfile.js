@@ -29,15 +29,23 @@ module.exports = function(grunt) {
 		uglify: {
 			library: {
 				files: {
-					'mediatizr.min.js': ['src/mediatizr.js']
+					'mediatizr-<%= bower.version %>.min.js': ['src/mediatizr.js']
 				}
 			}
 		},
 		// Concatenate
 		concat: {
-			library: {
-				src: ['lib/Sheethub*.js', 'lib/W*.js', 'mediatizr.min.js'],
-				dest: 'mediatizr-<%= bower.version %>.min.js'
+			Sheethub: {
+				src: ['lib/Sheethub*.js', 'mediatizr-<%= bower.version %>.min.js'],
+				dest: 'mediatizr-<%= bower.version %>.Sheethub.min.js'
+			},
+			W: {
+				src: ['lib/W*.js', 'mediatizr-<%= bower.version %>.min.js'],
+				dest: 'mediatizr-<%= bower.version %>.W.min.js'
+			},
+			SheethubW: {
+				src: ['lib/Sheethub*.js', 'lib/W*.js', 'mediatizr-<%= bower.version %>.min.js'],
+				dest: 'mediatizr-<%= bower.version %>.Sheethub.W.min.js'
 			}
 		},
 	});
