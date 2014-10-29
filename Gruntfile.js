@@ -5,8 +5,7 @@ module.exports = function(grunt) {
 		bower: grunt.file.readJSON('bower.json'),
 		// Remove obsolete files
 		clean: {
-			old: ['*.min.js'],
-			work: ['mediatizr.min.js']
+			old: ['*.min.js']
 		},
 		// Lint
 		jshint: {
@@ -29,23 +28,23 @@ module.exports = function(grunt) {
 		uglify: {
 			library: {
 				files: {
-					'mediatizr-<%= bower.version %>.min.js': ['src/mediatizr.js']
+					'mediatizr.min.js': ['src/mediatizr.js']
 				}
 			}
 		},
 		// Concatenate
 		concat: {
 			Sheethub: {
-				src: ['lib/Sheethub*.js', 'mediatizr-<%= bower.version %>.min.js'],
-				dest: 'mediatizr-<%= bower.version %>.Sheethub.min.js'
+				src: ['lib/Sheethub*.js', 'mediatizr.min.js'],
+				dest: 'mediatizr.Sheethub.min.js'
 			},
 			W: {
-				src: ['lib/W*.js', 'mediatizr-<%= bower.version %>.min.js'],
-				dest: 'mediatizr-<%= bower.version %>.W.min.js'
+				src: ['lib/W*.js', 'mediatizr.min.js'],
+				dest: 'mediatizr.W.min.js'
 			},
 			SheethubW: {
-				src: ['lib/Sheethub*.js', 'lib/W*.js', 'mediatizr-<%= bower.version %>.min.js'],
-				dest: 'mediatizr-<%= bower.version %>.Sheethub.W.min.js'
+				src: ['lib/Sheethub*.js', 'lib/W*.js', 'mediatizr.min.js'],
+				dest: 'mediatizr.Sheethub.W.min.js'
 			}
 		},
 	});
@@ -57,6 +56,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 
 	// Define tasks
-	grunt.registerTask('default', ['clean:old', 'jshint', 'uglify', 'concat', 'clean:work']);
+	grunt.registerTask('default', ['clean:old', 'jshint', 'uglify', 'concat']);
 
 };

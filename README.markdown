@@ -16,7 +16,7 @@ Features
 Use
 ---
 
-Link the script at the top of your page, under your stylesheet declarations.
+Link the script at the top of your page, under your stylesheet declarations. There's several versions of mediatizr, depending on what dependency is included on. Most of the time you want to pick `mediatizr.Sheethub.W.min.js`.
 
 Caveats
 -------

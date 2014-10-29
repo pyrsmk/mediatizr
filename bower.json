@@ -1,6 +1,5 @@
 {
   "name": "mediatizr",
-  "version": "0.3.2",
   "description": "A media queries polyfill",
   "main": "src/mediatizr.js",
   "repository": {
