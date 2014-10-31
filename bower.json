@@ -8,12 +8,16 @@
   },
   "keywords": [
     "polyfill",
-    "media queries"
+    "media",
+    "query",
+    "queries",
+    "css"
   ],
   "authors": ["Aurélien Delogu"],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pyrsmk/mediatizr/issues"
   },
-  "homepage": "http://dreamysource.fr/product/mediatizr"
+  "homepage": "http://dreamysource.fr/product/mediatizr",
+  "ignore": [".git"]
 }

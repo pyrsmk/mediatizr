@@ -3,6 +3,16 @@ mediatizr 0.4.0
 
 Mediatizr adds media queries to browsers that don't support it (like Internet Explorer 5.5-8). It's based on [Sheethub](https://github.com/pyrsmk/Sheethub) and [W](https://github.com/pyrsmk/W) to have a better compatibility with retrieving stylesheets and responsive events.
 
+Install
+-------
+
+You can pick the minified library or install it with :
+
+```
+bower install mediatizr
+npm install pyrsmk-mediatizr --save-dev
+```
+
 Features
 --------
 
