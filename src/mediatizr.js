@@ -42,7 +42,7 @@
                         while(conditions[++j]){
                             // Extract data
                             condition=conditions[j].match(/\(\s*(.+?)\s*:\s*(.+?)(px|em)\s*\)/);
-                            current=W(condition[3]=='em');
+                            current=W.px2em(W.getViewportWidth(condition[3]=='em'));
                             required=condition[2];
                             // Enable/disable stylesheet
                             Sheethub[get](i)[node]().disabled=
@@ -115,7 +115,7 @@
             }
 
             // Catch responsive events
-            W(evalMedias);
+            W.addListener(evalMedias);
             evalMedias();
 
         };

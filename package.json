@@ -1,7 +1,7 @@
 {
   "name": "pyrsmk-mediatizr",
   "description": "A media queries polyfill",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": "Aurélien Delogu <pyrsmk@dreamysource.fr> (http://dreamysource.fr)",
   "repository": {
     "type": "git",
