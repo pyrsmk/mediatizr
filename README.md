@@ -9,6 +9,7 @@ Install
 You can pick the minified library or install it with :
 
 ```
+jam install pyrsmk-mediatizr
 bower install mediatizr
 npm install pyrsmk-mediatizr --save-dev
 ```

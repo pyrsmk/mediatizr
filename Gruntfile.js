@@ -33,6 +33,9 @@ module.exports = function(grunt) {
 		},
 		// Minify
 		uglify: {
+			options: {
+				preserveComments: 'some'
+			},
 			library: {
 				files: {
 					'mediatizr.min.js': ['src/mediatizr.js']
@@ -73,6 +76,9 @@ module.exports = function(grunt) {
 			},
 			npm: {
 				command: 'npm publish'
+			},
+			jam: {
+				command: 'jam publish'
 			}
 		}
 	});
