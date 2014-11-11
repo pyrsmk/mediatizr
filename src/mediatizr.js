@@ -1,9 +1,4 @@
-/*
-    mediatizr, a media queries polyfill
-
-    Author
-        Aurélien Delogu (dev@dreamysource.fr)
-*/
+/* mediatizr 0.4.1 (https://github.com/pyrsmk/mediatizr) */
 
 (function(){
 
