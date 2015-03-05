@@ -19,5 +19,14 @@
     "url": "https://github.com/pyrsmk/mediatizr/issues"
   },
   "homepage": "http://dreamysource.fr/product/mediatizr",
-  "ignore": [".git"]
+  "ignore": [
+    ".git/",
+    ".gitignore",
+    "nodes_modules/",
+    "src/",
+    "tests/",
+    "Gruntfile.js",
+    "package.json",
+    "lib/"
+  ]
 }
