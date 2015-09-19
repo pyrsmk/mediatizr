@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/pyrsmk/mediatizr.git"
   },
-  "main": "src/mediatizr.js",
+  "main": "mediatizr.min.js",
   "keywords": [
     "polyfill",
     "media",
