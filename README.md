@@ -1,6 +1,8 @@
 mediatizr 0.4.3
 ===============
 
+__Since media queries are [supported by all modern browsers](https://www.caniuse.com/#feat=css-mediaqueries), this library is considered obsolete.__
+
 Mediatizr adds media queries to browsers that don't support it (like Internet Explorer 5.5-8). It's based on [Sheethub](https://github.com/pyrsmk/Sheethub) and [W](https://github.com/pyrsmk/W) to have a better compatibility with retrieving stylesheets and responsive events.
 
 Install
